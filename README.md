@@ -1,7 +1,8 @@
 zk-manager
 ==========
 作者:孤狼 
-  
+联系方式:zuiwoxing@qq.com
+
   zookeeper 管理工具 该工具以web形式实现，方便远程查看。
   该工具实现了以下功能 
   1.提供zookeeper节点管理. 
