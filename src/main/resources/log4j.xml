@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="consoleInfoLog" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="INFO" />
+			<param name="LevelMin" value="INFO" />
+		</filter>
+	</appender>
+	<appender name="consoleDebugLog" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="DEBUG" />
+			<param name="LevelMin" value="DEBUG" />
+		</filter>
+	</appender>
+	<appender name="consoleErrorLog" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="ERROR" />
+			<param name="LevelMin" value="ERROR" />
+		</filter>
+	</appender>
+	<appender name="traceLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'_'yyyy-MM-dd'.log'" />
+		<param name="File" value="${catalina.base}/logs/zk-manager-tracelog.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+	</appender>
+	<appender name="debugLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'_'yyyy-MM-dd'.log'" />
+		<param name="File" value="${catalina.base}/logs/zk-manager-debug.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="DEBUG" />
+			<param name="LevelMin" value="DEBUG" />
+		</filter>
+	</appender>
+	<appender name="infoLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'_'yyyy-MM-dd'.log'" />
+		<param name="File" value="${catalina.base}/logs/zk-manager-info.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="INFO" />
+			<param name="LevelMin" value="INFO" />
+		</filter>
+	</appender>
+	<appender name="userOptInfoLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'_'yyyy-MM-dd'.log'" />
+		<param name="File" value="${catalina.base}/logs/user_opt_log.txt" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="INFO" />
+			<param name="LevelMin" value="INFO" />
+		</filter>
+	</appender>
+	<appender name="warnLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'_'yyyy-MM-dd'.log'" />
+		<param name="File" value="${catalina.base}/logs/zk-manager-warn.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="WARN" />
+			<param name="LevelMin" value="WARN" />
+		</filter>
+	</appender>
+	<appender name="errorLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'_'yyyy-MM-dd'.log'" />
+		<param name="File" value="${catalina.base}/logs/zk-manager-error.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-3p] %C{1} - %m - [%C]%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMax" value="ERROR" />
+			<param name="LevelMin" value="ERROR" />
+		</filter>
+	</appender>
+	 
+	<root>
+
+		<!--启用远程日志归集-->
+		<!--<appender-ref ref="scribeLog" />-->
+		<!-- <appender-ref ref="consoleInfoLog" /> -->
+		<!-- <appender-ref ref="consoleDebugLog" /> -->
+		<appender-ref ref="consoleErrorLog" />
+
+		<!--
+		<appender-ref ref="traceLog" />
+		<appender-ref ref="debugLog" />
+		<appender-ref ref="infoLog" />
+		<appender-ref ref="warnLog" />
+		<appender-ref ref="errorLog" />
+		-->
+	</root>
+
+	<!-- 记录该包下所有日志 -->
+	<logger name="com.dj.zk.manager.web.interceptors.UserOptLogInterceptor">
+		<appender-ref ref="userOptInfoLog" />
+	</logger>
+
+</log4j:configuration>

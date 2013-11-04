@@ -1,0 +1,10 @@
+<%@ page contentType="text/html;chartset = UTF-8" pageEncoding ="UTF-8" %>
+<script type="text/javascript">
+    if(typeof maskTimeout == 'undefined')
+        maskTimeout = 1250;
+    setTimeout(function(){
+        Ext.get('loading').remove();
+        Ext.get('loading-mask').fadeOut({remove:true});
+    }, maskTimeout);
+
+</script>
