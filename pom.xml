@@ -9,7 +9,7 @@
 	
 	
 	<properties>
-		<spring.version>3.1.2.RELEASE</spring.version>
+		<spring.version>3.2.5.RELEASE</spring.version>
 		<log4j.version>1.2.14</log4j.version>
 		<zookeeper.version>3.4.5</zookeeper.version>
 		<jackson.version>1.9.9</jackson.version>
